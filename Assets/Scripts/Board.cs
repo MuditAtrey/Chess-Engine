@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class Board : MonoBehaviour
 {
@@ -95,9 +95,9 @@ public static class Piece {
 
 
 
+*/
 
-
-/*using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 public class Board : MonoBehaviour
@@ -111,7 +111,7 @@ public class Board : MonoBehaviour
 
     void Start()
     {
-        //boardState = new BoardState();
+        boardState = new BoardState();
         CreateGraphicalBoard();
         RenderPieces();
     }
@@ -160,11 +160,11 @@ public class Board : MonoBehaviour
 
         if (pieceColor == Piece.White)
         {
-            prefabIndex = pieceType - 1; // white pieces at 0-5
+            prefabIndex = pieceType ; // white pieces at 0-5
         }
         else if (pieceColor == Piece.Black)
         {
-            prefabIndex = pieceType - 1 + 6; // black pieces at 6-11
+            prefabIndex = pieceType + 6; // black pieces at 6-11
         }
 
         if (prefabIndex >= 0 && prefabIndex < piecePrefabs.Length && piecePrefabs[prefabIndex] != null)
@@ -231,4 +231,3 @@ public class BoardState
         }
     }
 }
-*/
