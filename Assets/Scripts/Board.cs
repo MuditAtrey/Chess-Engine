@@ -137,8 +137,8 @@ public class Board : MonoBehaviour
     }
 
     void RenderPieces()
-    {
-        for (int index = 0; index < 64; index++)
+    { 
+        for (int index = 0; index <64; index++)
         {
             int pieceCode = boardState.Square[index];
             if (pieceCode != Piece.None)
@@ -192,14 +192,17 @@ public class BoardState
 {
     public int[] Square { get; private set; }
     //private const string startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
-    private const string startFEN = "K7/p6p/5P1p/8/N1R3Pq/1k3n1P/1Pb5/2Q1b3 w - - 0 1";
+    //test fen below
+    private const string startFEN = "4B3/2p3P1/p7/1r3PB1/1Pk5/3nKpP1/1p3R2/7R w - - 0 1";
+
+
     public BoardState()
     {
         Square = new int[64];
         LoadPositionFromFen(startFEN);
     }
 
-    public void LoadPositionFromFen(string fen)
+    public void LoadPositionFromFen(string fen) //loads position from top left to bottom right
     {
         var pieceTypeFromSymbol = new Dictionary<char, int>
         {
@@ -208,14 +211,14 @@ public class BoardState
         };
 
         string fenBoard = fen.Split(' ')[0];
-        int file = 0, rank = 0;
+        int file = 0, rank = 7;
 
-        foreach (char symbol in fenBoard)
+        foreach (char symbol in fenBoard) 
         {
             if (symbol == '/')
             {
                 file = 0;
-                rank++;
+                rank--;
             }
             else if (char.IsDigit(symbol))
             {
