@@ -191,8 +191,8 @@ public static class Piece
 public class BoardState
 {
     public int[] Square { get; private set; }
-    private const string startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
-
+    //private const string startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    private const string startFEN = "K7/p6p/5P1p/8/N1R3Pq/1k3n1P/1Pb5/2Q1b3 w - - 0 1";
     public BoardState()
     {
         Square = new int[64];
